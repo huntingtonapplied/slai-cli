@@ -1,28 +1,25 @@
-<div align="center">
-  <img src=".readme/logo.png" alt="SLAI CLI" width="360"><br><br>
-</div>
+# SLAI CLI
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](#license)
 [![Python](https://img.shields.io/badge/python-3.9+-blue.svg)](https://python.org)
 [![Status](https://img.shields.io/badge/status-active-success.svg)](#)
 
------------------
-
-**SLAI CLI** (`slai`) is the terminal client for [SmartLoad AI](../README.md) — inspect and manage freight loads, shipments, and portfolio metrics from your shell, and script them into CI.
+**SLAI CLI** (`slai`) is the terminal client for SmartLoad AI (SLAI). Inspect and manage freight loads, shipments, and portfolio metrics from your shell, and script them into CI.
 
 It is a thin client (`click` + `httpx` + `rich`) that talks to the SLAI backend API. Authenticate once, then list and fetch loads and shipments, pull portfolio metrics, check system status, and pipe results as JSON/YAML/CSV into your pipelines.
 
 ## Install
 
 ```bash
-pip install slai-cli
+curl -fsSL https://downloads.smartloadai.com/cli/install.sh | bash
 ```
 
-From source:
+From source (a clone of this repo):
 ```bash
-cd cli
 pip install -e .
 ```
+
+There is no PyPI package: the `slai-cli` name on PyPI belongs to an unrelated project, so do not install it from PyPI.
 
 Standalone binary:
 ```bash
@@ -47,8 +44,8 @@ api_url: http://localhost:8020   # local backend; production points at the hoste
 Or use environment variables:
 - `SLAI_API_KEY`
 - `SLAI_API_URL`
-- `SLAI_DOWNLOADS_BASE_URL` (default `https://downloads.slai.ai`) — binary downloads
-- `SLAI_NO_UPDATE_CHECK=1` — disable update checks
+- `SLAI_DOWNLOADS_BASE_URL` (default `https://downloads.smartloadai.com`) sets the binary downloads base
+- `SLAI_NO_UPDATE_CHECK=1` disables update checks
 
 ## Commands
 
@@ -93,9 +90,7 @@ slai loads list --ci
 
 ## Documentation & resources
 
-- Root: [../README.md](../README.md)
-- Backend API it talks to: [../backend/README.md](../backend/README.md)
-- Hosted product: `smartloadai.com`
+- Hosted product: [smartloadai.com](https://smartloadai.com)
 
 ## License
 
